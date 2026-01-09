@@ -32,8 +32,8 @@
             
                 <!-- RIGHT SECTION -->
                 <div class="right-section">
-                    <div class="cross-menu relative right-0 cursor-pointer md:hidden">
-                        <i class="fa-solid fa-xmark text-white"></i>
+                    <div class="cross-menu md:hidden">
+                        <img src="assets/close-x-svgrepo-com.svg" alt="" srcset="">
                     </div>
                     <div class="menu-links">
                         <div class="top-menu-links">
@@ -63,7 +63,7 @@
                 <div class="hamburger">
                 <div class="flex flex-row align-center gap-[17px]">
                     <img src="assets/search.mobile.svg" alt="" srcset="" class="cursor-pointer">
-                    <span class="cursor-pointer">☰</span>
+                    <span class="cursor-pointer menu-burger">☰</span>
                 </div>
                     
                 </div>
@@ -248,6 +248,23 @@
                 }
             });
         });
+
+        const burger = document.querySelector('.menu-burger');
+        const closeBtn = document.querySelector('.cross-menu');
+        const rightSection = document.querySelector('.right-section');
+
+        // Open menu: Toggle or Add class
+        burger.addEventListener('click', () => {
+            rightSection.classList.add('active');
+        });
+
+        // Close menu: Remove class
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                rightSection.classList.remove('active');
+            });
+        }
     </script>
+    
 </body>
 </html>
