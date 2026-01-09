@@ -427,12 +427,41 @@ h5 {
 .hamburger {
   display: none;
   font-size: 25px;
-  cursor: pointer;
 }
 
 @media (max-width: 850px) {
-  .menu-links,
   .right-section {
+    display: none;
+    position: absolute;
+    top: 0;
+    background: #ccc;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 1;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    padding: 16px;
+  }
+  .menu-links {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+  }
+  .bottom-menu-links {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .top-menu-links {
+    padding: 0;
+  }
+  .bottom-menu-links a {
+    padding: 12px 0px;
+  }
+  .btn {
+    padding: 10px 15px;
+  }
+  .search-icon {
     display: none;
   }
   .hamburger {
